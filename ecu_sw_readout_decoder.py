@@ -47,7 +47,7 @@ def decode_array(arg_str, lpc_enabled, viu_enabled):
             print("  " + key + " : " + value)
 
     elif viu_enabled == True:
-        sw_type_list = ["SWLM[EXE] / SWBT[PBL] (FuncProg + 22F125)", "SWP1[RT]","SWBL [SBL]", "SWE1 [ESS]", "SWL2 [ESM]"]
+        sw_type_list = ["SWLM[EXE] / SWBT[PBL] if FuncProg + 22F125", "SWP1[RT]","SWBL [SBL]", "SWE1 [ESS]", "SWL2 [ESM]"]
         
         print("\n VIU")
         sw_app_dict_confighub = dict(zip(sw_type_list, sw_list))
