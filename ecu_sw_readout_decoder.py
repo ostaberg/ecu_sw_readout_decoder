@@ -12,7 +12,15 @@ def decode_array(arg_str, lpc_enabled, viu_enabled):
         break   # first instance found, stop
 
     array_cleaned = arg_str[sw_readout_start: ]     # extract useful part of the array
-    array_cleaned = array_cleaned.replace('-', "")      # remove '-' symbol from the array
+    
+    # find if any '-' symbol or space ' ' is used as delimiter in SW Part Number readout respons
+    dash_delimiter_found = False
+    dash_delimiter_found = array_cleaned.rfind('-')
+    print(dash_delimiter_found)
+    if dash_delimiter_found != -1:
+        array_cleaned = array_cleaned.replace('-', '')      # remove '-' symbol from the array
+    else:
+        array_cleaned = array_cleaned.replace(" ", '')      # remove ' ' space from the array
     #print(array_cleaned)
 
     # split string into separate "SW Part Number" slices
@@ -70,7 +78,7 @@ def decode_array(arg_str, lpc_enabled, viu_enabled):
     print("\n")
     #print(sys.argv[0])
     #print(sys.argv[1])
-    print(sys.argv[2])
+    #print(sys.argv[2])
 
 
 def argument_parse_handler():
