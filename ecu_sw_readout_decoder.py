@@ -47,7 +47,7 @@ def decode_array(arg_str, lpc_enabled, viu_enabled):
     # merge two lists into one SW Part Number dictionary containing sw label and sw identifier
     # if lpc flag (-lpc) is set, merge sw_list with other list than the default hpa sw list 
     if lpc_enabled == True:
-        sw_type_list = ["SWLM", "SWE1", "SWBL", "SWP2", "SWM1"]
+        sw_type_list = ["SWLM", "SWE1", "SWP1", "SWP2", "SWM1", "SWBL"]
         
         print("\n LPC")
         sw_app_dict_confighub = dict(zip(sw_type_list, sw_list))
